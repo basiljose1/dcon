@@ -11,10 +11,12 @@ class LenderEligblViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         serializer = self.serializer_class(data=request.data)
-        serializer.is_valid()
-        serializer.save()
-        session.commit()
-        return JsonResponse(serializer.instance)
+        if serializer.is_valid():
+            serializer.save()
+            session.commit()
+            return JsonResponse(serializer.instance)
+        else:
+            return JsonResponse(serializer.errors)
 
 
 class PilotDealersEligblViewSet(viewsets.ModelViewSet):
@@ -23,7 +25,9 @@ class PilotDealersEligblViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         serializer = self.serializer_class(data=request.data)
-        serializer.is_valid()
-        serializer.save()
-        session.commit()
-        return JsonResponse(serializer.instance)
+        if serializer.is_valid():
+            serializer.save()
+            session.commit()
+            return JsonResponse(serializer.instance)
+        else:
+            return JsonResponse(serializer.errors)
