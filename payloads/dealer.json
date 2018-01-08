@@ -1,0 +1,18 @@
+{
+"dlr_id": 10, 
+"eligbl_id":{
+	"veh_typ_cd": "car", 
+	"app_type": "app2", 
+	"deal_type": "deal", 
+	"effective_ts": "2018-01-08T10:00", 
+	"cp_id": "4", 
+	"eligbl_id": "12", 
+	"prod_type": "prod2", 
+	"created_ts": "2018-01-08T10:00", 
+	"dt_verification_in": "ver", 
+	"incld_in": "inc2", 
+	"updtd_ts": "2018-01-08T07:00",
+	"modified_by": "Basil", 
+	"st_cd": "st2"
+	}
+}

@@ -10,9 +10,7 @@ class LenderEligblSerializer(serializers.ModelSerializer):
         model = LenderEligbl
         session = session
         read_only_fields = ('eligbl_id','created_ts')
-        fields = ['eligbl_id','created_ts','cp_id', 'st_cd', 'prod_type', 'app_type', 'deal_type',
-                  'dt_verification_in', 'incld_in', 'veh_typ_cd', 'modified_by', 'effective_ts']
-
+        fields = '__all__'
 
 class PilotDealersEligblSerializer(serializers.ModelSerializer):
 

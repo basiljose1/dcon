@@ -1,0 +1,15 @@
+{
+        "st_cd": "sc",
+        "created_ts": "2018-01-08T11:08:56Z",
+        "app_type": "app",
+        "incld_in": "incld",
+        "modified_by": "santhosh",
+        "dt_verification_in": "verification",
+        "updtd_ts": "2018-01-08T11:08:56Z",
+        "effective_ts": "2018-01-01T22:00:00Z",
+        "deal_type": "deal",
+        "veh_typ_cd": "vehicle",
+        "prod_type": "prod",
+        "cp_id": 2
+	
+}
