@@ -14,7 +14,7 @@ class LenderEligblViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             session.commit()
-            return JsonResponse(serializer.instance, safe=False)
+            return JsonResponse(serializer.data, safe=False)
         else:
             return JsonResponse(serializer.errors)
 
@@ -30,10 +30,10 @@ class PilotDealersEligblViewSet(viewsets.ModelViewSet):
         eligbl_se.save()
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            serializer.data['eligbl_id'] = eligbl_se.validated_data.get('eligbl_id')
+            serializer.validated_data['eligbl_id'] = eligbl_se.validated_data.get('eligbl_id')
             serializer.save()
             session.commit()
             import ipdb; ipdb.set_trace()
-            return JsonResponse(serializer.instance, safe=False)
+            return JsonResponse(serializer.data, safe=False)
         else:
             return JsonResponse(serializer.errors)
