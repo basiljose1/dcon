@@ -1,6 +1,8 @@
 # from rest_framework import serializers
 from rest_witchcraft import serializers
 
+from rest_framework import serializers as sers
+
 from app.models import LenderEligbl, PilotDealersEligbl, session
 
 
@@ -18,3 +20,10 @@ class PilotDealersEligblSerializer(serializers.ModelSerializer):
         model = PilotDealersEligbl
         session = session
         fields = '__all__'
+        # validators = [
+        #     sers.UniqueTogetherValidator(
+        #         queryset=PilotDealersEligbl.query,
+        #         fields=('dlr_id', 'eligbl_id'),
+        #         message=("dlrid and eligblid not Unique together")
+        #     )
+        # ]

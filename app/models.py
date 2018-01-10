@@ -48,11 +48,13 @@ class LenderEligbl(Base):
 class PilotDealersEligbl(Base):
     __tablename__ = 'pilot_dealers_eligbl'
 
-    dlr_id = sa.Column(sa.Integer(), primary_key=True)
+    id = sa.Column(sa.Integer(), primary_key=True, autoincrement=True)
+    dlr_id = sa.Column(sa.Integer())
 
     _eligbl_id = sa.Column('eligbl_id', sa.Integer(),
                            sa.ForeignKey('dcon_lender_eligbl.eligbl_id'))
     eligbl_id = sa.orm.relationship(LenderEligbl, backref='dcon_lender_eligbl')
-
+    __table_args__ = (sa.UniqueConstraint('dlr_id', 'eligbl_id', name='_dlr_eligbl_uc'),
+                     )
 
 Base.metadata.create_all(engine)
